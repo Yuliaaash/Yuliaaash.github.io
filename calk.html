@@ -1,0 +1,82 @@
+
+<html
+>
+  <head>
+    <title>Calculator</title>
+    
+
+
+
+<style>
+       display{
+ display: block;
+ margin: 10px auto;
+ width: 50%;
+ padding: 10px;
+ border: 1px solid #000;
+ border-radius: 10px;
+ font-size: 18px;
+ text-align: center;
+}
+div{
+ display: flex;
+}
+input[type=button]{
+ width: 50px;
+ height: 50px;
+ padding: 10px;
+ font-size: 18px;
+ margin: 10px 10px;
+ background-color: #000;
+ color: #fff;
+ border: 1px solid #000;
+ border-radius: 10px;
+}
+   </style>
+
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <input type="text" id="display" readonly />
+    <div>
+      <input type="button" value="1" onclick="addValue(1)" />
+      <input type="button" value="2" onclick="addValue(2)" />
+      <input type="button" value="3" onclick="addValue(3)" />
+      <input type="button" value="+" onclick="addValue('+')" />
+    </div>
+    <div>
+      <input type="button" value="4" onclick="addValue(4)" />
+      <input type="button" value="5" onclick="addValue(5)" />
+      <input type="button" value="6" onclick="addValue(6)" />
+      <input type="button" value="-" onclick="addValue('-')" />
+    </div>
+    <div>
+      <input type="button" value="7" onclick="addValue(7)" />
+      <input type="button" value="8" onclick="addValue(8)" />
+      <input type="button" value="9" onclick="addValue(9)" />
+      <input type="button" value="*" onclick="addValue('*')" />
+    </div>
+    <div>
+      <input type="button" value="C" onclick="clearDisplay()" />
+      <input type="button" value="0" onclick="addValue(0)" />
+      <input type="button" value="=" onclick="calculate()" />
+      <input type="button" value="/" onclick="addValue('/')" />
+    </div>
+  </body>
+  <script>
+    let displayElement = document.querySelector("#display");
+
+    function addValue(value) {
+      displayElement.value += value;
+    }
+
+    function calculate() {
+      let calculatedValue = eval(displayElement.value);
+      displayElement.value = calculatedValue;
+    }
+
+    function clearDisplay() {
+      displayElement.value = "";
+    }
+  </script>
+</html>
